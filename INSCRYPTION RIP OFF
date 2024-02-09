@@ -1,0 +1,52 @@
+10 PRINT "Frazer's Inscyption Knock off"
+11 DIM ULIT%(3)
+12 DIM ELIT%(3)
+20 REM A = (damage,health,sigil)
+21 REM SIGIL 1 IS SHIELD, SIGIL 2 IS BRITTLE, SIGIL 3 IS QUILLS
+22REM SIGIL 4 IS DOUBLE STRIKE, SIGIL 5 STRIKES THROUGH SHIELD
+23REM SIGIL 6 IS THE UNDERWATER ONE, SIGIL 7 ATTACKS YOUR LIFE POINTS DIRECTLY YUGI
+24REM SIGIL 8 HEALS YOU THE AMOUNT OF DAMAGE DEALT
+30 REM pick cards based on random number picker
+40 REM number gets bigger as you go
+45 REM deck is array with the numbers that correspond to the card
+50 REM array for the field that has 8 indices with disctinct card number up to
+55 REM 99 add 100 times the indices so that every one is unique in case there are
+60 REM multiple of the same card on the field
+61 I = 0
+62 UDAMTAKEN = 0
+63 THEYDAMTAKEN = 0
+65 A = RND(100)
+66 A = A * 100
+67 A = INT(A)
+70 PRINT STR$(A)
+71 ULIT(I) = 0
+72 ELIT(I) = 0
+80 PRINT STR$(RND(100))
+86 PRINT B
+90 I = I + 1
+100 IF I < 5 GOTO 65
+110 IF A% >= 1 AND A% =< 30 THEN DAMAGE = 1 : HEALTH = 1 : SIGIL = 0 
+: NAME$ = "FAIL"
+120 IF A > 30 AND A <= 50 THEN DAMAGE = 1 : HEALTH = 2 : SIGIL = 0
+: NAME$ = "HEALTHY BOI"
+130 IF A > 50 AND A <= 60 THEN DAMAGE = 1  : HEALTH = 1 : SIGIL = 1 
+: NAME$ = "PROTECTOR"
+140 IF A > 60 AND A <= 65 THEN DAMAGE = 2 : HEALTH = 1 : SIGIL = 2 
+: NAME$ = "SKELLETON" 
+150 IF A > 65 AND A <= 70 THEN DAMAGE = 1 : HEALTH = 2 : SIGIL = 3 
+: NAME$ = "PORCUPINE"
+160 IF A > 70 AND A <= 72 THEN DAMAGE = 1 : HEALTH = 1 : SIGIL = 4
+: NAME$ = "HARD WORKER"
+170 IF A > 72 AND A <= 74 THEN DAMAGE = 2 : HEALTH = 1 : SIGIL = 5
+: NAME$ = "ASSASSIN"
+180 IF A > 74 AND A <= 76 THEN DAMAGE = 0 : HEALTH = 5 : SIGIL = 0
+: NAME$ = "BIG HEALTH"
+190 IF A > 76 AND A <= 86 THEN DAMAGE = 1: HEALTH = 2: SIGIL = 6 
+: NAME$ = "COWARD"
+200 IF A > 86 AND A <= 96 THEN DAMAGE = 1: HEALTH = 1 : SIGIL = 7
+: NAME$ = "DIRECT DAN"
+210 IF A = 97 THEN DAMAGE = 1: HEALTH = 3 : SIGIL = 8 : NAME$ = "VAMPIRE
+220 IF A = 98 THEN DAMAGE = 2: HEALTH = 1 : SIGIL = 4 : NAME$ = "SIDE STRIKER"
+230 IF A = 99 THEN DAMAGE = 3: HEALTH = 3 : SIGIL = 0 : NAME$ = "ULTIMATE LIFE FORM"
+
+900 PRINT DAMAGE : PRINT HEALTH : PRINT SIGIL
